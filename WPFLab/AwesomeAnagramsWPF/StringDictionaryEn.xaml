@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="strStartButton">_Start</system:String>
+    <system:String x:Key="strStopButton">Sto_p</system:String>
+    <system:String x:Key="strShowDefinitions">Show _Definitions</system:String>
+    
+    <system:String x:Key="strGuesses">Guesses:</system:String>
+    <system:String x:Key="strAnagrams">Anagrams:</system:String>
+    <system:String x:Key="strDefintions">Word Definitions:</system:String>
+    <system:String x:Key="strLetterBank">Letter Bank:</system:String>
+    
+    <system:String x:Key="strWordGuess">Word Guess:</system:String>
+    <system:String x:Key="strEnter">_Enter</system:String>
+    <system:String x:Key="strShuffle">Sh_uffle</system:String>
+    
+    <system:String x:Key="randomLetters">Enter amount of random letters to generate: </system:String>
+    <system:String x:Key="minLetters">Enter the minimum number of letters:</system:String>
+    <system:String x:Key="maxLetters">Enter the maximum number of letters:</system:String>
+    <system:String x:Key="strSave">_Save </system:String>
+    <system:String x:Key="strCancel">_Cancel</system:String>
+</ResourceDictionary>

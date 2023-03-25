@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AwesomeAnagramsMobile.Pages.DictionaryPage"
+             Title="Dictionary">
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar Text="{Binding SearchText}"
+                       Placeholder="Enter your word to search..."
+                       PlaceholderColor ="Gray"
+                       SearchCommand="{Binding SearchCommand}"/>
+            <ListView ItemsSource="{Binding Words}"
+                      SelectedItem="{Binding SelectedItem}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label Text="{Binding Word}" FontSize="Medium"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

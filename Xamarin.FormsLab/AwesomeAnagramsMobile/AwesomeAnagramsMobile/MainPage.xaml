@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AwesomeAnagramsMobile.MainPage">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Nav Bar">
+            <ListView x:Name="lstView" 
+                      ItemSelected="lstView_ItemSelected"/>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+</MasterDetailPage>

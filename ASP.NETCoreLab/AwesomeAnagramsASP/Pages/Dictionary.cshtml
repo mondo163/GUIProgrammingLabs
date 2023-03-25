@@ -1,0 +1,70 @@
+﻿@page
+@model AwesomeAnagramsASP.Pages.DictionaryModel
+@{
+    ViewData["Title"] = "Dictionary";
+}
+
+<style>
+    ul.words{
+        column-count: 5;
+        list-style: none;
+    }
+
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">Dictionary</h1>
+</div>
+
+<div class="text-center">
+    @for (char i = 'A'; i <= 'Z'; i++)
+    {
+        <a asp-page="./Dictionary"
+           asp-route-Filter="@i.ToString()">
+            @i.ToString()
+        </a>
+        <span> | </span>
+    }
+    
+</div>
+
+<div class="text-center">
+    <br />
+    <ul class="words">
+        @foreach (string word in Model.Words)
+        {
+            <li>
+                <a asp-page="./Definition"
+                   asp-route-Word="@word">
+                    @word
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+
+<div >
+    <p> 
+        @{
+            string prevDisabled = Model.Words.HasPreviousPage ? "" : "disabled";
+            string nextDisabled = Model.Words.HasNextPage ? "" : "disabled";
+        }
+
+        <a asp-page="./Dictionary"
+           asp-route-PageIndex="@(Model.Words.PageIndex-1)"
+           asp-route-Filter="@Model.Filter"
+           class="btn btn-primary @prevDisabled">Prev</a>
+
+
+        <a asp-page="./Dictionary"
+           asp-route-PageIndex="@(Model.Words.PageIndex+1)"
+           asp-route-Filter="@Model.Filter"
+           class="btn btn-primary @nextDisabled">Next</a>
+    </p>
+    <p>
+        @Model.Words.PageIndex / @Model.Words.TotalPages
+    </p>
+    <p>
+        @Model.Words.TotalResults Results
+    </p>
+</div>

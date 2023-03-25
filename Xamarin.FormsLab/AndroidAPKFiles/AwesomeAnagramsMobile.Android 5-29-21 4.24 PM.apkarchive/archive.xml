@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Archive>
+  <Name>AwesomeAnagramsMobile</Name>
+  <PackageName>com.AwesomeCorp.awesomeanagramsmobile</PackageName>
+  <PackageVersionCode>1</PackageVersionCode>
+  <PackageVersionName>1.0</PackageVersionName>
+  <PackageFormat>apk</PackageFormat>
+  <CreationDate>637579274804206899</CreationDate>
+  <SolutionName>Lab 5</SolutionName>
+  <SolutionPath>D:\OneDrive\OIT docs\CST 238 Repos\Lab 5\Lab 5.sln</SolutionPath>
+  <Status></Status>
+  <Configuration>
+    <DebugMode>false</DebugMode>
+  </Configuration>
+</Archive>

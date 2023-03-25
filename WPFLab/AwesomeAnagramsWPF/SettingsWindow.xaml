@@ -1,0 +1,75 @@
+﻿<Window x:Class="AwesomeAnagramsWPF.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AwesomeAnagramsWPF"
+        mc:Ignorable="d"
+        Title="Settings" Height="425" Width="500">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,.5" EndPoint="1,.5">
+            <GradientStop Color="DarkSlateBlue" Offset="1"/>
+            <GradientStop Color="LightGray" Offset=".5"/>
+            <GradientStop Color="DarkSlateGray" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions >
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBox Style="{StaticResource textBoxStyle}"
+                 Text="{StaticResource randomLetters}"
+                 Padding="20"/>
+        <ComboBox Grid.Column="1"
+                  Name="comboBoxRandom"
+                  Style="{StaticResource settingsComboBox}" />
+
+        <TextBox Grid.Row="1"
+                 Style="{StaticResource  textBoxStyle}"
+                 Text="{StaticResource minLetters}"
+                 Padding="20"/>
+        <ComboBox Grid.Row="1"
+                  Grid.Column="1"
+                  Name="comboBoxMin"
+                  Style="{StaticResource settingsComboBox}"/>
+
+        <TextBox Grid.Row="2"
+                 Style="{StaticResource textBoxStyle}"
+                 Text="{StaticResource maxLetters}"
+                 Padding="20" />
+        <ComboBox Grid.Row="2"
+                  Grid.Column="1"
+                  Name="comboBoxMax"
+                  Style="{StaticResource settingsComboBox}"/>
+
+            <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Width="95"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Template="{StaticResource defaultButtonStyle}"
+                    Style="{StaticResource buttonStyle}"
+                    Content="{StaticResource strSave}" Click="SettingsSaveButton_Click"/>
+
+            <Button Grid.Column="1"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Template="{StaticResource defaultButtonStyle}"
+                    Style="{StaticResource buttonStyle}"
+                    Content="{StaticResource strCancel}" Click="SettingsCancelButton_Click"/>
+        </Grid>
+    </Grid>
+
+</Window>

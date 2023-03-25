@@ -1,0 +1,68 @@
+﻿@page
+@model AwesomeAnagramsASP.Pages.AnagramsModel
+@{
+    ViewData["Title"] = "Anagrams";
+}
+
+
+<style>
+    ul.words {
+        column-count: 5;
+        list-style: none;
+    }
+</style>
+
+<div class="text-md-left">
+    <h1 class="display-4">Anagrams</h1>
+</div>
+
+<div>
+    <form method="get">
+        <div class="input-group">
+            <input type="search" class="form-control"
+                   asp-for="Letters"/>
+            <button class="btn btn-primary">Search</button>
+        </div>
+    </form>
+</div>
+
+<div>
+    <br/>
+    <ul class="words">
+        @foreach (string word in Model.Words)
+        {
+            <li>
+                <a asp-page="./Definition"
+                   asp-route-Word="@word">
+                    @word
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+
+<div>
+    <p>
+        @{
+            string prevDisabled = Model.Words.HasPreviousPage  ? "" : "disabled";
+            string nextDisabled = Model.Words.HasNextPage ? "" : "disabled";
+        }
+
+        <a asp-page="./Anagrams"
+           asp-route-Letters="@Model.Letters"
+           asp-route-PageIndex="@(Model.Words.PageIndex-1)"
+           class="btn btn-primary @prevDisabled">Prev</a>
+
+
+        <a asp-page="./Anagrams"
+           asp-route-Letters="@Model.Letters"
+           asp-route-PageIndex="@(Model.Words.PageIndex+1)"
+           class="btn btn-primary @nextDisabled">Next</a>
+    </p>
+    <p>
+        @Model.Words.PageIndex / @Model.Words.TotalPages
+    </p>
+    <p>
+        @Model.Words.TotalResults Results
+    </p>
+</div>

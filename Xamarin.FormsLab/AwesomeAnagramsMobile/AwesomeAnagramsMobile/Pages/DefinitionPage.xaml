@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AwesomeAnagramsMobile.Pages.DefinitionPage"
+             Title="Definition">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label FontSize="Title" Text="{Binding Word}"/>
+            <Label FontSize="Body" Text="{Binding Definition}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
